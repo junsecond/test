@@ -347,12 +347,12 @@ var objectLoader = new THREE.ObjectLoader();
 		}else if(event.targetTouches.length == 1){
 			var xDistances = x2-firstX;
 			var yDistances = y2-firstY;
-			alert(xDistances);
-			alert(yDistances);
+			
+			// xDistances > 0表示向右滑动，yDistances>0表示向上滑动
 		//	mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
 			
-	//		mesh.rotation.x = Math.PI*1.5*;	
-	//		mesh.rotation.y = Math.PI/2;	
+			mesh.rotation.x = Math.PI*1.5*xDistances;	
+			mesh.rotation.y = Math.PI/2*yDistances;	
 		//	mesh.rotation.z = (Math.PI/9)*7.32;	
 				
 			markerRoot.add( mesh );
