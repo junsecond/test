@@ -263,6 +263,7 @@ var objectLoader = new THREE.ObjectLoader();
 	objectLoader.load("models/untitled.json", function ( obj ) {			
 			mesh = obj;	
 				
+	alert(1);
 			mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
 				
 			mesh.rotation.x = Math.PI*1.5;	
@@ -306,7 +307,6 @@ var objectLoader = new THREE.ObjectLoader();
 	var distancestart=0,distanceend=0;
 	var modelSize=15;
 	var firstX=0,firstY=0;
-	alert(1);
 	//touchstart事件
 	document.addEventListener('touchstart',function (event) {
             event.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
