@@ -337,8 +337,8 @@ var objectLoader = new THREE.ObjectLoader();
 			xLength=x2-x3;			
 			yLength=y2-y3;			
 			distanceend=Math.sqrt((xLength*xLength)+(yLength*yLength));			
-			var changex = distancestart/distanceend;			
-			var changey = changex*changex*changex;			
+			var changex = distancestart/distanceend/2;			
+			var changey = changex*changex*changex/2;			
 			//var modelSize = distancestart/distanceend * 12;			
 			modelSize = changey * 4.5;			
 			camera.position.z = -modelSize;			
@@ -351,8 +351,8 @@ var objectLoader = new THREE.ObjectLoader();
 			// xDistances > 0表示向右滑动，yDistances>0表示向上滑动
 		//	mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
 			
-			mesh.rotation.x = Math.PI*1.5*xDistances/5;	
-			mesh.rotation.y = Math.PI/2*yDistances/5;	
+			mesh.rotation.x = Math.PI*1.5*xDistances/10;	
+			mesh.rotation.y = Math.PI/2*yDistances/10;	
 		//	mesh.rotation.z = (Math.PI/9)*7.32;	
 				
 			markerRoot.add( mesh );
