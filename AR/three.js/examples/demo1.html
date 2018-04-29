@@ -306,6 +306,7 @@ var objectLoader = new THREE.ObjectLoader();
 	var distancestart=0,distanceend=0;
 	var modelSize=15;
 	var firstX=0,firstY=0;
+	alert(1);
 	//touchstart事件
 	document.addEventListener('touchstart',function (event) {
             event.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
@@ -347,17 +348,15 @@ var objectLoader = new THREE.ObjectLoader();
 		}else if(event.targetTouches.length == 1){
 			var xDistances = x2-firstX;
 			var yDistances = y2-firstY;
-			var temp=new THREE.Object3D();
-			temp.add(mesh);
-			temp.rotation.y=Math.PI/4;
+			
 			// xDistances > 0表示向右滑动，yDistances>0表示向上滑动
 		//	mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
 			
-		//	mesh.rotation.x = Math.PI*1.5*yDistances*100;	
-		//	mesh.rotation.y = Math.PI/2*xDistances/50;	
+			mesh.rotation.x = mesh.rotation.x + Math.PI*1.5*yDistances;	
+			mesh.rotation.y = mesh.rotation.y + Math.PI/2*xDistances;	
 		//	mesh.rotation.z = (Math.PI/9)*7.32;	
 				
-		//	markerRoot.add( mesh );
+			markerRoot.add( mesh );
 		}
 		//animate(nowMsec);			
 		renderer.render(scene, camera);			
