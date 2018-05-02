@@ -351,8 +351,10 @@ var objectLoader = new THREE.ObjectLoader();
 		//	mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
 		//	mesh.rotation.x = mesh.rotation.x + Math.PI*yDistances;	
 			if(xDistances > yDistances){
+			alert(1);
 				mesh.rotation.y = mesh.rotation.y + Math.PI*xDistances;
 			}else if(xDistances < yDistances){
+			alert(2);
 				mesh.rotation.x = mesh.rotation.x + Math.PI*yDistances;
 			}
 		//	mesh.rotation.z = (Math.PI/9)*7.32;	
