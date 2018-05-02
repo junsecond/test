@@ -263,7 +263,7 @@ var objectLoader = new THREE.ObjectLoader();
 	objectLoader.load("models/untitled.json", function ( obj ) {			
 			mesh = obj;	
 				
-	alert(1);
+	alert(4);
 			mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
 				
 			mesh.rotation.x = Math.PI*1.5;	
@@ -348,10 +348,8 @@ var objectLoader = new THREE.ObjectLoader();
 		}else if(event.targetTouches.length == 1){
 			var xDistances = Math.abs(x2)-firstX;
 			var yDistances = Math.abs(y2)-firstY;
-			alert("mesh.rotation.x ="+mesh.rotation.x );
-			alert("mesh.rotation.y ="+mesh.rotation.y );
 		//	mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
-			mesh.rotation.x = mesh.rotation.x + Math.PI*yDistances;	
+		//	mesh.rotation.x = mesh.rotation.x + Math.PI*yDistances;	
 			mesh.rotation.y = mesh.rotation.y + Math.PI*xDistances;	
 		//	mesh.rotation.z = (Math.PI/9)*7.32;	
 				
