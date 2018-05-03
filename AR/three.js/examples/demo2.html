@@ -263,7 +263,7 @@ var objectLoader = new THREE.ObjectLoader();
 	objectLoader.load("models/untitled.json", function ( obj ) {			
 			mesh = obj;	
 				
-		alert(1);
+		alert(2);
 			//  改变模型初期化大小
 			mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.3;	
 			// 改变模型初期化角度
@@ -271,8 +271,8 @@ var objectLoader = new THREE.ObjectLoader();
 			mesh.rotation.y = Math.PI/2;	
 			mesh.rotation.z = (Math.PI/9)*7.32;
 			
-			mesh.geometry.computeBoundingBox();  
-			mesh.geometry.center() ;
+		//	mesh.geometry.computeBoundingBox();  
+		//	mesh.geometry.center() ;
 				
 			markerRoot.add( mesh );	
 	} );			
