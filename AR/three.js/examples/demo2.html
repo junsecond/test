@@ -291,7 +291,7 @@ var objectLoader = new THREE.ObjectLoader();
 	// run the rendering loop
 	var lastTimeMsec= null
 	requestAnimationFrame(function animate(nowMsec){
-		// keep looping
+		// 保持旋转
 		requestAnimationFrame( animate );
 		var axis = new THREE.Vector3(0,1,0);//向量axis			
 		mesh.rotateOnAxis(axis,Math.PI * 0.02);			

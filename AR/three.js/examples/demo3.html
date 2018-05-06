@@ -260,10 +260,10 @@
 	});
 */
 var objectLoader = new THREE.ObjectLoader();				
-	objectLoader.load("models/untitled.json", function ( obj ) {			
+	objectLoader.load("models/model.fbx", function ( obj ) {			
 			mesh = obj;	
 				
-	alert(0);
+	alert(1);
 			mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
 				
 			mesh.rotation.x = Math.PI*1.5;	
@@ -287,10 +287,10 @@ var objectLoader = new THREE.ObjectLoader();
 	// run the rendering loop
 	var lastTimeMsec= null
 	requestAnimationFrame(function animate(nowMsec){
-		// keep looping
+		// 保持旋转
 		requestAnimationFrame( animate );
 		var axis = new THREE.Vector3(0,1,0);//向量axis			
-		mesh.rotateOnAxis(axis,Math.PI * 0.002);			
+	//	mesh.rotateOnAxis(axis,Math.PI * 0.002);			
 
 		// measure time
 		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
