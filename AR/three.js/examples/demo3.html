@@ -14,15 +14,12 @@
 <script src='../src/threex/threex-armarkercontrols.js'></script>
 <script src='../src/threex/threex-arsmoothedcontrols.js'></script>
 <script>THREEx.ArToolkitContext.baseURL = '../'</script>
-
-
-
-		<script src="js/loaders/DDSLoader.js"></script>
-		<script src="js/loaders/MTLLoader.js"></script>
-		<script src="js/loaders/OBJLoader.js"></script>
-		<script src="js/loaders/ObjectLoader.js"></script>
-		<script src="js/Detector.js"></script>
-
+<script src="js/loaders/DDSLoader.js"></script>
+<script src="js/loaders/MTLLoader.js"></script>
+<script src="js/loaders/OBJLoader.js"></script>
+<script src="js/loaders/ObjectLoader.js"></script>
+<script src="js/Detector.js"></script>
+<script src="js/loaders/FBXLoader.js"></script>
 <body style='margin : 0px; overflow: hidden; font-family: Monospace;'><div style='position: absolute; top: 10px; width:100%; text-align: center;z-index:1';>
 	<a href='https://github.com/jeromeetienne/AR.js/' target='_blank'>AR.js</a> - developement playground
 	<br/>
@@ -259,19 +256,22 @@
 
 	});
 */
-var objectLoader = new THREE.ObjectLoader();				
-	objectLoader.load("models/model.fbx", function ( obj ) {			
-			mesh = obj;	
-				
-	alert(1);
-			mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.06;	
-				
-			mesh.rotation.x = Math.PI*1.5;	
-			mesh.rotation.y = Math.PI/2;	
-			mesh.rotation.z = (Math.PI/9)*7.32;	
-				
-			markerRoot.add( mesh );	
-	} );			
+	// model							
+	var loader = new THREE.FBXLoader();
+	loader.load( 'models/ARproject/fbx/12.fbx', function ( object ) {
+	object.mixer = new THREE.AnimationMixer( object );
+								
+		mixers.push( object.mixer );
+		alert(0);
+		var action = object.mixer.clipAction( object.animations[ 0 ] );
+		action.play();
+								
+		object.scale.x =  object.scale.y =  object.scale.z = 0.0005;
+								
+		object.rotation.set(Math.PI*2,Math.PI*1.5,Math.PI*1.5) ;
+		markerRoot.add( object );
+	} ) ;	
+
 
 	//////////////////////////////////////////////////////////////////////////////////
 	//		render the whole thing on the page
@@ -289,8 +289,11 @@ var objectLoader = new THREE.ObjectLoader();
 	requestAnimationFrame(function animate(nowMsec){
 		// 保持旋转
 		requestAnimationFrame( animate );
-		var axis = new THREE.Vector3(0,1,0);//向量axis			
-	//	mesh.rotateOnAxis(axis,Math.PI * 0.002);			
+		if ( mixers.length > 0 ) {
+			for ( var i = 0; i < mixers.length; i ++ ) {
+				mixers[ i ].update( clock.getDelta() );
+			}
+		}
 
 		// measure time
 		lastTimeMsec	= lastTimeMsec || nowMsec-1000/60
