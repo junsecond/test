@@ -264,9 +264,9 @@
 
 	var mixers = [];
 	var loader = new THREE.FBXLoader();				
-	loader.load( 'models/ARproject/fbx/12.fbx', function ( object ) {				
+	loader.load( 'models/model.fbx', function ( object ) {				
 	object.mixer = new THREE.AnimationMixer( object );				
-					
+			alert(0);
 			mixers.push( object.mixer );		
 					
 			var action = object.mixer.clipAction( object.animations[ 0 ] );		
