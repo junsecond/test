@@ -256,13 +256,15 @@
 
 	});
 */
+	var clock = new THREE.Clock();
+	var mixers = [];
 	// model							
 	var loader = new THREE.FBXLoader();
 	loader.load( "models/model.fbx", function ( object ) {
 	object.mixer = new THREE.AnimationMixer( object );
 								
-		mixers.push( object.mixer );
 		alert(0);
+		mixers.push( object.mixer );
 		var action = object.mixer.clipAction( object.animations[ 0 ] );
 		action.play();
 								
