@@ -4,6 +4,7 @@
 <!-- three.js library  
 <script src='vendor/three.js/build/three.js'></script>-->
 <script src="../build/three.js"></script>
+<script src='vendor/three.js/examples/js/libs/stats.min.js'></script>
 <!-- jsartookit -->
 <script src='../vendor/jsartoolkit5/build/artoolkit.min.js'></script>
 <script src='../vendor/jsartoolkit5/js/artoolkit.api.js'></script>
@@ -270,12 +271,12 @@
 
 	var mixers = [];
 	var loader = new THREE.FBXLoader();
-	loader.load( 'models/test.fbx', function ( object ) {				
-	object.mixer = new THREE.AnimationMixer( object );
+	loader.load( 'models/model.fbx', function ( object ) {
 		alert(0);
-			mixers.push( object.mixer );
-			var action = object.mixer.clipAction( object.animations[ 0 ] );
-				action.play();
+		object.mixer = new THREE.AnimationMixer( object );
+		mixers.push( object.mixer );
+		var action = object.mixer.clipAction( object.animations[ 0 ] );
+		action.play();
 		
 		object.scale.x =  object.scale.y =  object.scale.z = 0.01;
 		/*
