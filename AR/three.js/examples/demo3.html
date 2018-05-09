@@ -20,7 +20,6 @@
 		<script src="js/loaders/DDSLoader.js"></script>
 		<script src="js/loaders/MTLLoader.js"></script>
 		<script src="js/loaders/OBJLoader.js"></script>
-		<script src="js/loaders/ObjectLoader.js"></script>
 		<script src="js/Detector.js"></script>
 		<script src="js/loaders/FBXLoader.js"></script>
 
@@ -263,7 +262,7 @@
 	var clock = new THREE.Clock();
 
 	var mixers = [];
-	var loader = new THREE.FBXLoader();				
+	var loader = new THREE.FBXLoader();
 	loader.load( 'models/model.fbx', function ( object ) {
 		object.mixer = new THREE.AnimationMixer( object );
 		mixers.push( object.mixer );
