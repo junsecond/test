@@ -323,35 +323,35 @@ var objectLoader = new THREE.ObjectLoader();
 			//记录触点初始位置
 			xLength=x-x1;
 			yLength=y-y1;
-			distancestart=Math.sqrt((xLength*xLength)+(yLength*yLength));			
-		}			
-    //touchmove事件						
-    document.addEventListener('touchmove',function(event){						
-            event.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等						
-            var touch2 = event.targetTouches[0]; //获取第一个触点						
-            var x2 = Number(touch2.screenX); //页面触点X2坐标						
-            var y2 = Number(touch2.screenY); //页面触点Y2坐标						
-		//双指触摸时			
-		if(event.targetTouches.length == 2){			
-			var touch3 = event.targetTouches[1];//获取第二个触点			
-			var x3 = Number(touch3.screenX); //页面触点X3坐标			
-			var y3 = Number(touch3.screenY); //页面触点Y3坐标						
-			xLength=x2-x3;			
-			yLength=y2-y3;			
-			distanceend=Math.sqrt((xLength*xLength)+(yLength*yLength));			
-			var changex = distancestart/distanceend;			
-			var changey = changex*changex*changex;			
-			//var modelSize = distancestart/distanceend * 12;			
-			modelSize = changey * 2.5;			
-			camera.position.z = -modelSize;			
-			camera.lookAt( scene.position );			
-			animate(modelSize);			
+			distancestart=Math.sqrt((xLength*xLength)+(yLength*yLength));
 		}
-		//animate(nowMsec);			
-		renderer.render(scene, camera);			
-		requestAnimationFrame( animate ); 			
-						
-	},false)					
-	},false)					
+    //touchmove事件
+    document.addEventListener('touchmove',function(event){
+            event.preventDefault(); //阻止触摸时浏览器的缩放、滚动条滚动等
+            var touch2 = event.targetTouches[0]; //获取第一个触点
+            var x2 = Number(touch2.screenX); //页面触点X2坐标
+            var y2 = Number(touch2.screenY); //页面触点Y2坐标
+		//双指触摸时
+		if(event.targetTouches.length == 2){
+			var touch3 = event.targetTouches[1];//获取第二个触点
+			var x3 = Number(touch3.screenX); //页面触点X3坐标
+			var y3 = Number(touch3.screenY); //页面触点Y3坐标
+			xLength=x2-x3;
+			yLength=y2-y3;
+			distanceend=Math.sqrt((xLength*xLength)+(yLength*yLength));
+			var changex = distancestart/distanceend;
+			var changey = changex*changex*changex;
+			//var modelSize = distancestart/distanceend * 12;
+			modelSize = changey * 2.5;
+			camera.position.z = -modelSize;
+			camera.lookAt( scene.position );
+			animate(modelSize);
+		}
+		//animate(nowMsec);
+		renderer.render(scene, camera);
+		requestAnimationFrame( animate ); 
+
+	},false)
+	},false)
 
 </script></body>
