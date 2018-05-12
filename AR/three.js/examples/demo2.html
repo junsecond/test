@@ -263,7 +263,7 @@ var objectLoader = new THREE.ObjectLoader();
 	objectLoader.load("models/untitled.json", function ( obj ) {			
 			mesh = obj;	
 				
-		alert(2);
+		alert(3);
 			//  改变模型初期化大小
 			mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.3;	
 			// 改变模型初期化角度
@@ -339,10 +339,10 @@ var objectLoader = new THREE.ObjectLoader();
 			xLength=x2-x3;
 			yLength=y2-y3;
 			distanceend=Math.sqrt((xLength*xLength)+(yLength*yLength));
-			var changex = distancestart/distanceend;
-			var changey = changex*changex*changex;
+			var changex = distancestart/distanceend/2;
+			var changey = changex*changex*changex/2;
 			//var modelSize = distancestart/distanceend * 12;
-			modelSize = changey * 2.5;
+			modelSize = changey * 2.5/2;
 			camera.position.z = -modelSize;
 			camera.lookAt( scene.position );
 			animate(modelSize);
