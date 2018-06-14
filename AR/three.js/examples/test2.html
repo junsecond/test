@@ -260,16 +260,16 @@
 	});
 */
 var objectLoader = new THREE.ObjectLoader();				
-	objectLoader.load("models/aa.json", function ( obj ) {			
+	objectLoader.load("models/test1json.json", function ( obj ) {			
 			mesh = obj;	
 				
-		alert(2);
+		alert(3);
 			//  改变模型初期化大小
 			mesh.scale.x =  mesh.scale.y =  mesh.scale.z = 0.2;	
 			// 改变模型初期化角度
 			mesh.rotation.x = Math.PI*1.5;	
 			mesh.rotation.y = Math.PI/2;	
-			mesh.rotation.z = (Math.PI/10)*7.32;
+			mesh.rotation.z = (Math.PI/9)*7.32;
 			
 		//	mesh.geometry.computeBoundingBox();  
 		//	mesh.geometry.center() ;
