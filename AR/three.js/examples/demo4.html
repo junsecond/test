@@ -270,7 +270,7 @@
 	var loader = new THREE.FBXLoader();
 //	loader.load( 'models/model.fbx', function ( object ) {
 	loader.load( 'models/huanyi2.fbx', function ( object ) {
-		alert(0);
+		alert(1);
 	object.mixer = new THREE.AnimationMixer( object );
 			mixers.push( object.mixer );
 			var action = object.mixer.clipAction( object.animations[ 0 ] );
@@ -280,7 +280,7 @@
 		
 		// 改变模型初期化角度
 		object.rotation.x = Math.PI*1.5;	
-		object.rotation.y = Math.PI*2;	
+		object.rotation.y = Math.PI*1;	
 		object.rotation.z = (Math.PI/9)*7.32;
 		
 		//object.rotation.set(Math.PI*1.5,Math.PI*1.5,Math.PI) ;
@@ -295,7 +295,7 @@
 	})
 	// run the rendering loop
 	var lastTimeMsec= null
-	requestAnimationFrame(function animate(nowMsec){
+/*	requestAnimationFrame(function animate(nowMsec){
 		// keep looping
 		requestAnimationFrame( animate );
 		controls.update();
@@ -315,5 +315,5 @@
 		onRenderFcts.forEach(function(onRenderFct){
 			onRenderFct(deltaMsec/1000, nowMsec/1000)
 		})	
-	})
+	})*/
 </script></body>
