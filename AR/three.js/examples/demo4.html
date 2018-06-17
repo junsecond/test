@@ -270,13 +270,13 @@
 	var loader = new THREE.FBXLoader();
 //	loader.load( 'models/model.fbx', function ( object ) {
 	loader.load( 'models/huanyi2.fbx', function ( object ) {
-		alert(1);
+		alert(2);
 	object.mixer = new THREE.AnimationMixer( object );
 			mixers.push( object.mixer );
 			var action = object.mixer.clipAction( object.animations[ 0 ] );
 				action.play();
 		
-		object.scale.x =  object.scale.y =  object.scale.z = 0.01;
+		object.scale.x =  object.scale.y =  object.scale.z = 0.2;
 		/*
 		object.rotation.x = Math.PI * 1.5 ;
 		object.rotation.y = Math.PI * 1.5;
