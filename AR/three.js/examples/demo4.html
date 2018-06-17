@@ -269,8 +269,8 @@
 	// model
 	var loader = new THREE.FBXLoader();
 //	loader.load( 'models/model.fbx', function ( object ) {
-	loader.load( 'models/huanyi.fbx', function ( object ) {
-		alert(0);
+	loader.load( 'models/huanyi2.fbx', function ( object ) {
+		alert(1);
 	object.mixer = new THREE.AnimationMixer( object );
 			mixers.push( object.mixer );
 			var action = object.mixer.clipAction( object.animations[ 0 ] );
@@ -297,15 +297,12 @@
 	requestAnimationFrame(function animate(nowMsec){
 		// keep looping
 		requestAnimationFrame( animate );
-		
 		controls.update();
-		
 		if ( mixers.length > 0 ) {
-					for ( var i = 0; i < mixers.length; i ++ ) {
-						mixers[ i ].update( clock.getDelta() );
-					}
-				}
-		
+			for ( var i = 0; i < mixers.length; i ++ ) {
+				mixers[ i ].update( clock.getDelta() );
+			}
+		}
 		//camera.position.y=0.05;
 		//var axis = new THREE.Vector3(0,1,0);
 		//mesh.rotateOnAxis(axis,Math.PI * (-0.002));
