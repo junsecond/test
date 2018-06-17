@@ -214,7 +214,7 @@
 	},false);
 	},false);
 	
-	var onProgress = function ( xhr ) {
+/*	var onProgress = function ( xhr ) {
 		if ( xhr.lengthComputable ) {
 			var percentComplete = xhr.loaded / xhr.total * 100;
 			console.log( Math.round(percentComplete, 2) + '% downloaded' );
@@ -223,7 +223,7 @@
 	
 	var onError = function ( xhr ) { };
 	THREE.Loader.Handlers.add( /\.dds$/i, new THREE.DDSLoader() );
-	
+	*/
 /*
 	// model
 	var onProgress = function ( xhr ) {
@@ -270,7 +270,7 @@
 	var loader = new THREE.FBXLoader();
 //	loader.load( 'models/model.fbx', function ( object ) {
 	loader.load( 'models/huanyi2.fbx', function ( object ) {
-		alert(3);
+		alert(4);
 	object.mixer = new THREE.AnimationMixer( object );
 			mixers.push( object.mixer );
 			var action = object.mixer.clipAction( object.animations[ 0 ] );
