@@ -269,8 +269,8 @@
 	// model
 	var loader = new THREE.FBXLoader();
 //	loader.load( 'models/model.fbx', function ( object ) {
-	loader.load( 'models/huanyi2.fbx', function ( object ) {
-		alert(1);
+	loader.load( 'models/huanyi.fbx', function ( object ) {
+		alert(2);
 	object.mixer = new THREE.AnimationMixer( object );
 			mixers.push( object.mixer );
 			var action = object.mixer.clipAction( object.animations[ 0 ] );
