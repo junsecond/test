@@ -153,7 +153,7 @@
 		// barcodeValue: 5,
 		
 		type : 'pattern',
-		patternUrl : '../../data/multimarkers/multi-abcdef/patt.new',
+		patternUrl : '../../data/multimarkers/multi-abcdef/patt(1).CyzxAr01',
 	})
 	// build a smoothedControls
 	var smoothedRoot = new THREE.Group()
@@ -270,7 +270,7 @@
 	var loader = new THREE.FBXLoader();
 	loader.load( 'models/huanyi.fbx', function ( object ) {
 	object.mixer = new THREE.AnimationMixer( object );
-			alert(1);
+		alert(1);
 			mixers.push( object.mixer );
 			var action = object.mixer.clipAction( object.animations[ 0 ] );
 				action.play();
